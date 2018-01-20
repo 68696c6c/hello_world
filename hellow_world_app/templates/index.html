@@ -2,18 +2,20 @@
 {% load staticfiles %}
 
 {% block title %}
-       Homepage - {{ block.super }}
+Homepage - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
-       <ul>
-              {% for r in rock %}
-                     {{r}}
-              <li><a href="{% url 'rocks/rock_detail' %}">{{ rock.name }}</a></li>
-              {% endfor %}
-       </ul>
-       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-       <img src="{% static 'images/meaganfoxy.jpg' %}" alt=""/>
+<fieldset>
+    <legend>Page Details</legend>
+    <dl>
+        <dt>url path:</dt>
+        <dd>{{ url_path }}</dd>
+        <dt>view path:</dt>
+        <dd>{{ view_path }}</dd>
+    </dl>
+</fieldset>
+<img src="{% static img_path %}" alt=""/>
 {% endblock content %}
 
 
