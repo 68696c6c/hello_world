@@ -4,7 +4,7 @@
 <head>
     <title>
         {% block title %}
-        My Hello Web App Project
+            My Hello Web App Project
         {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css' %}"/>
@@ -26,13 +26,16 @@
                 <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'about' %}">About</a></li>
                 <a href="{% url 'contact' %}">Contact</a>
+                <span>|</span>
+                <a href="{% url 'rocks' %}">Rock List</a>
+                <a href="{% url 'rocks' %}">Rock Detail</a>
             </nav>
         </div>
     </header>
-    <div id="content" class="row">
-        <section class="col-sm-12">
+    <div class="row">
+        <div id="content" class="col-sm-12">
             {% block content %}{% endblock content %}
-        </section>
+        </div>
     </div>
     <footer>
         {% block footer %}{% endblock footer %}

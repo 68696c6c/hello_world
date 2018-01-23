@@ -1,10 +1,10 @@
 # Create your views here.
 from __future__ import unicode_literals
-from django.shortcuts import render
+
 from django.views.generic import TemplateView
-from django.http import HttpResponse
-from hellow_world_app.models import Rock
 from django.views.generic.list import ListView
+
+from hellow_world_app.models import Rock
 
 
 class HomeView(TemplateView):
@@ -13,34 +13,49 @@ class HomeView(TemplateView):
     def get(self, request, *args, **kwargs):
         context = {
             'banner': 'Index.html',
-            'url_path': "''",
-            'view_path': 'templates/index.html',
             'img_path': 'images/meaganfoxy.jpg',
+            'data': {
+                'url_path': "'rocks/list'",
+                'view_path': 'templates/rocks/list.html',
+                'request': request,
+                'args': args,
+                'kwargs': kwargs,
+            },
         }
         return self.render_to_response(context)
 
 
 class RockList(ListView):
     model = Rock
+    template_name = 'rocks/list.html'
 
-    def get_context_data(self, **kwargs):
-        context['rock'] = Rock.objects.all().order_by('?'),
-
+    def get_context_data(self):
+        context = {
+            'banner': 'Rocks/List.html',
+            'img_path': '',
+            'rocks': Rock.objects.all().order_by('?'),
+            'data': {
+                'url_path': "'rocks/list'",
+                'view_path': 'templates/rocks/list.html',
+            },
+        }
         return context
-
-    def get_template_names(self):
-        return ['rocks/rock_list.html']
 
 
 class RockDetail(TemplateView):
+    template_name = 'rocks/detail.html'
 
     def get(self, request, *args, **kwargs):
         context = {
-            'number': 6,
-            'rock': Rock.objects.get(id=1).order_by('?'),
-
+            'banner': 'Rocks/Detail.html',
+            'img_path': '',
+            'rock': Rock.objects.get(id=kwargs['id']),
+            'data': {
+                'url_path': "'rocks/detail'",
+                'view_path': 'templates/rocks/detail.html',
+                'request': request,
+                'args': args,
+                'kwargs': kwargs,
+            },
         }
         return self.render_to_response(context)
-
-    def get_template_names(self):
-        return ['rocks/rock_detail.html']

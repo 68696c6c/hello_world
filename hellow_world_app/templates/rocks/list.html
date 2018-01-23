@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Rocks :: {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <fieldset>
+        <legend>Rock List</legend>
+        {% for r in rocks %}
+            <section>
+                <a href="{% url 'rock' id=r.id %}">{{ r.name }}</a>
+                <p>{{ r }}</p>
+            </section>
+        {% endfor %}
+        {% include 'rocks/_request_data.html' %}
+    </fieldset>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <img src="{% static img_path %}" alt=""/>
+{% endblock content %}

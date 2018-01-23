@@ -2,15 +2,18 @@
 {% load staticfiles %}
 
 {% block title %}
-    Index - {{ block.super }}
+    {{ rock.name }} :: {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     <fieldset>
-        <legend>Home</legend>
+        <legend>{{ rock.name }}</legend>
+        <section>
+            <h3>Rock ID {{ rock.id }}</h3>
+            <p>{{ rock.description }}</p>
+        </section>
         {% include 'rocks/_request_data.html' %}
     </fieldset>
-    <img src="{% static img_path %}" alt=""/>
 {% endblock content %}
 
 

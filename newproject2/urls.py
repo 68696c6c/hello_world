@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
+
 from hellow_world_app.views import HomeView
-from hellow_world_app.views import RockList
 from hellow_world_app.views import RockDetail
+from hellow_world_app.views import RockList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,6 @@ urlpatterns = [
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
 
     # Rocks
-    path('rocks/list', RockList.as_view()),
-    path('rocks/detail/', RockDetail.as_view()),
+    path('rocks/list', RockList.as_view(), name='rocks'),
+    path('rocks/detail/<int:id>', RockDetail.as_view(), name='rock'),
 ]
