@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 
-from hellow_world_app.views import HomeView
-from hellow_world_app.views import RockDetail
-from hellow_world_app.views import RockList
+from app.views import HomeView
+from app.views import RockDetail
+from app.views import RockList
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 
-from hellow_world_app.models import Rock
+from app.models import Rock
 
 
 class HomeView(TemplateView):

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # import model
-from hellow_world_app.models import Rock
+from app.models import Rock
 
 
 # set up automated slug creation

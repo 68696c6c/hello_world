@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Rock(models.Model):
+    class Meta:
+        db_table = 'rocks'
     name = models.CharField(max_length=255)
     description = models.TextField()
     slug = models.SlugField(unique=True)
