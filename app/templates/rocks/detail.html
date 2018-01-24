@@ -2,18 +2,18 @@
 {% load staticfiles %}
 
 {% block title %}
-    {{ rock.name }} :: {{ block.super }}
+  {{ rock.name }} :: {{ block.super }}
 {% endblock title %}
 
 {% block content %}
-    <fieldset>
-        <legend>{{ rock.name }}</legend>
-        <section>
-            <h3>Rock ID {{ rock.id }}</h3>
-            <p>{{ rock.description }}</p>
-        </section>
-        {% include 'rocks/_request_data.html' %}
-    </fieldset>
+  <fieldset>
+    <legend>{{ rock.name }}</legend>
+    <section>
+      <h3>Rock ID {{ rock.id }}</h3>
+      <p>{{ rock.description }}</p>
+    </section>
+  </fieldset>
+  {% include 'rocks/_request_data.html' %}
 {% endblock content %}
 
 

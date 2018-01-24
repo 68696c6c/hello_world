@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+  {{ rock.name }} :: {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+  <fieldset>
+    <legend>Create Rock</legend>
+    <form action="{% url 'create_rock' %}" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <br/>
+        <input id="name" type="text" name="name" value="{{ rock.name }}"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <br/>
+        <textarea id="description" type="text"
+                  name="description"
+                  rows="5"
+                  cols="50"
+        >{{ rock.description }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="slug">Slug:</label>
+        <br/>
+        <input id="slug" type="text" name="slug" value="{{ rock.name }}"/>
+      </div>
+      <input type="submit"/>
+    </form>
+  </fieldset>
+  {% include 'rocks/_request_data.html' %}
+{% endblock content %}

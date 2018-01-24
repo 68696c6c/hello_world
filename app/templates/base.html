@@ -2,44 +2,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>
-        {% block title %}
-            My Hello Web App Project
-        {% endblock title %}
-    </title>
-    <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css' %}"/>
-    <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-alpha.6-dist/css/grid.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    {% block header %}{% endblock header %}
+  <title>
+    {% block title %}
+      My Hello Web App Project
+    {% endblock title %}
+  </title>
+  <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css' %}"/>
+  <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-alpha.6-dist/css/grid.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  {% block header %}{% endblock header %}
 </head>
 <body>
 <div class="container">
-    <header class="row">
-        <div class="col-sm-12 page-header">
-            <h1>Hello World App - {{ banner }}</h1>
-            <nav>
-                <!--
+  <header class="row">
+    <div class="col-sm-12 page-header">
+      <h1>Hello World App - {{ banner }}</h1>
+      <nav>
+        <!--
                 When we do {% url 'home' %} below, 'home' is the name we assigned
                 in the urls.py file with name='home':
                 path('home/', HomeView.as_view(template_name='index.html'), name='home'),
                 -->
-                <a href="{% url 'home' %}">Home</a>
-                <a href="{% url 'about' %}">About</a></li>
-                <a href="{% url 'contact' %}">Contact</a>
-                <span>|</span>
-                <a href="{% url 'rocks' %}">Rock List</a>
-                <a href="{% url 'rocks' %}">Rock Detail</a>
-            </nav>
-        </div>
-    </header>
-    <div class="row">
-        <div id="content" class="col-sm-12">
-            {% block content %}{% endblock content %}
-        </div>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a></li>
+        <a href="{% url 'contact' %}">Contact</a>
+        <span>|</span>
+        <a href="{% url 'create_rock' %}">Create Rock</a>
+        <a href="{% url 'rocks' %}">Rock List</a>
+        <a href="{% url 'rocks' %}">Rock Detail</a>
+      </nav>
     </div>
-    <footer>
-        {% block footer %}{% endblock footer %}
-    </footer>
+  </header>
+  <div class="row">
+    <div id="content" class="col-sm-12">
+      {% block content %}{% endblock content %}
+    </div>
+  </div>
+  <footer>
+    {% block footer %}{% endblock footer %}
+  </footer>
 </div>
 </body>
 </html>

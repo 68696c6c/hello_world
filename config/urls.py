@@ -20,6 +20,7 @@ from django.views.generic import TemplateView
 from app.views import HomeView
 from app.views import RockDetail
 from app.views import RockList
+from app.views import CreateRock
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     # Rocks
     path('rocks/list', RockList.as_view(), name='rocks'),
     path('rocks/detail/<int:id>', RockDetail.as_view(), name='rock'),
+    path('rocks/create', CreateRock.as_view(), name='create_rock'),
 ]
