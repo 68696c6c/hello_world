@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 
 
@@ -11,3 +12,6 @@ class Rock(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.name, self.description)
+
+    def get_absolute_url(self):
+        return reverse('rocks')

@@ -25,4 +25,30 @@ fieldset {
 fieldset legend {
     padding: 15px;
     width: auto;
+    margin-bottom: 0;
+}
+
+label {
+    font-weight: 700;
+}
+
+form label {
+    display: block;
+}
+
+.rock-info {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin: auto;
+}
+
+.rock-info:last-child {
+    border-bottom: none;
+}
+
+.rock-info nav {
+    display: inline-block;
+    width: 140px;
+    float: right;
 }

@@ -7,11 +7,11 @@
 
 {% block content %}
   <fieldset>
-    <legend>Create Rock</legend>
+    <legend>Update Rock</legend>
     <form action="" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" value="Save"/>
+      <input type="submit" value="Save" class="btn btn-success"/>
     </form>
   </fieldset>
 {% endblock content %}

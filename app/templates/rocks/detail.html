@@ -7,11 +7,25 @@
 
 {% block content %}
   <fieldset>
-    <legend>{{ rock.name }}</legend>
+    <legend>Rock Detail</legend>
     <section>
-      <h3>Rock ID {{ rock.id }}</h3>
-      <p>{{ rock.description }}</p>
+      <h3>{{ rock.name }}</h3>
+      <ul>
+        <li>
+          <label>ID: </label>{{ rock.id }}
+        </li>
+        <li>
+          <label>Slug:</label>{{ rock.slug }}
+        </li>
+        <li>
+          <label>Description:</label>
+          <p>{{ rock.description }}</p>
+        </li>
+      </ul>
     </section>
+    <nav>
+      <a href="{% url 'update_rock' pk=rock.id %}" class="btn btn-sm btn-primary">Update</a>
+    </nav>
   </fieldset>
   {% include 'rocks/_request_data.html' %}
 {% endblock content %}

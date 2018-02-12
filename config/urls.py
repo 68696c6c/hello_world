@@ -21,6 +21,7 @@ from app.views import HomeView
 from app.views import RockDetail
 from app.views import RockList
 from app.views import CreateRock
+from app.views import UpdateRock
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +34,5 @@ urlpatterns = [
     path('rocks/list', RockList.as_view(), name='rocks'),
     path('rocks/detail/<int:id>', RockDetail.as_view(), name='rock'),
     path('rocks/create', CreateRock.as_view(), name='create_rock'),
+    path('rocks/update/<int:pk>', UpdateRock.as_view(), name='update_rock'),
 ]
