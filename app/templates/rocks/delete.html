@@ -10,8 +10,8 @@
     <legend>Update Rock</legend>
     <form action="" method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Save" class="btn btn-primary"/>
+      <p>Are you sure you want to delete "{{ object.name }}"?</p>
+      <input type="submit" value="Confirm" class="btn btn-danger"/>
     </form>
   </fieldset>
 {% endblock content %}

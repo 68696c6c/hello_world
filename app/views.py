@@ -1,8 +1,9 @@
-# Create your views here.
 from __future__ import unicode_literals
 
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import DeleteView
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
 
@@ -54,3 +55,9 @@ class CreateRock(CreateView):
     template_name = 'rocks/create.html'
     model = Rock
     fields = ['name', 'description', 'slug']
+
+
+class DeleteRock(DeleteView):
+    template_name = 'rocks/delete.html'
+    model = Rock
+    success_url = reverse_lazy('rocks')

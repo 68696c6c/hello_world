@@ -13,8 +13,9 @@
         <div class="rock-info">
           <strong>{{ r.name }}</strong>
           <nav>
-            <a href="{% url 'rock' id=r.id %}" class="btn btn-sm btn-primary">Details</a>
-            <a href="{% url 'update_rock' pk=r.id %}" class="btn btn-sm btn-warning">Update</a>
+            <a href="{% url 'rock' id=r.id %}" class="btn btn-sm btn-info">Details</a>
+            <a href="{% url 'update_rock' pk=r.id %}" class="btn btn-sm btn-primary">Update</a>
+            <a href="{% url 'delete_rock' pk=r.id %}" class="btn btn-sm btn-danger">Delete</a>
           </nav>
         </div>
       {% endfor %}

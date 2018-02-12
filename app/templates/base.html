@@ -23,13 +23,12 @@
                 in the urls.py file with name='home':
                 path('home/', HomeView.as_view(template_name='index.html'), name='home'),
                 -->
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About</a></li>
-        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'home' %}" class="btn btn-default">Home</a>
+        <a href="{% url 'about' %}" class="btn btn-default">About</a></li>
+        <a href="{% url 'contact' %}" class="btn btn-default">Contact</a>
         <span>|</span>
-        <a href="{% url 'create_rock' %}">Create Rock</a>
-        <a href="{% url 'rocks' %}">Rock List</a>
-        <a href="{% url 'rocks' %}">Rock Detail</a>
+        <a href="{% url 'create_rock' %}" class="btn btn-success">Create Rock</a>
+        <a href="{% url 'rocks' %}" class="btn btn-warning">Rock List</a>
       </nav>
     </div>
   </header>
